@@ -1,0 +1,1 @@
+doskey n=notepad $*
