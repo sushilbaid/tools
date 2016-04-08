@@ -6,6 +6,7 @@
 @echo off
 @setlocal
 doskey n=notepad $*
+doskey dm=doskey /macros
 doskey tw=cd /d "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow"
 doskey cc=cd /d "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Team Tools\Dynamic Code Coverage Tools"
 
@@ -14,6 +15,19 @@ doskey cc=cd /d "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Team Tools\Dyn
 if  not %tools% == "" (
     doskey na=notepad %tools%\scripts\setAliases.cmd
     doskey ra=%tools%\scripts\setAliases.cmd
+    doskey dt=cd /d %tools%
 )
+
+@rem To enable pricate macros - 1) set privateTools env variable 2) place script file at %privateTools%\scripts\setAliases.cmd
+@rem this will enable to checkin private macros in private repo
+@rem e.g. privateTools=d:\g\privateTools
+if  not "%privateTools%" == "" if exist "%privateTools%\scripts\setAliases.cmd" (
+        doskey npa=notepad %privateTools%\scripts\setAliases.cmd
+        doskey rpa=%privateTools%\scripts\setAliases.cmd
+        doskey dpt=cd /d %privateTools%
+        call %privateTools%\scripts\setAliases.cmd
+)
+
+
 
 
