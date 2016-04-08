@@ -1,3 +1,4 @@
+@rem This script can be used to register a script as AutoRun script in command prompt shell
 @if "%1"=="" goto :Usage
     
 @reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d %1 /f 
