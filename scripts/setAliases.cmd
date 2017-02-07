@@ -9,6 +9,7 @@ doskey n=notepad $*
 doskey dm=doskey /macros
 doskey tw=cd /d "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow"
 doskey cc=cd /d "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\Team Tools\Dynamic Code Coverage Tools"
+doskey la=cd /d "%localappdata%\Microsoft\VisualStudio"
 
 @rem set tools env variable to enable these macros
 @rem e.g. tools=d:\g\tools\scripts
